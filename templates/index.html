@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI計算アプリ</title>
+</head>
+<body>
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+    <h1>BMI計算アプリ</h1>
+    <form action="/result" method="post">
+        <p>
+            身長（cm）:
+            <input type="text" name="height" placeholder="例：169">
+        </p>
+        <p>
+            体重（kg）：
+            <input type="text" name="weight" placeholder="例：85">
+        </p>
+        <button type="submit">計算する</button>
+    </form>
+    <a href="/history">過去の記録を見る</a>
+</body>
+</html>
