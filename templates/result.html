@@ -2,12 +2,21 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI計算結果</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>BMI計算結果</h1>
-    <p>BMI：{{ bmi }}</p>
-    <p>判定：{{ judgment }}</p>
-    <a href="/">もう一度計算する</a>
+    <div class="container">
+        <div class="card shadow p-4" style="max-width: 500px; margin: 0 auto;">
+            <h1 class="text-center md-4">BMI計算結果</h1>
+            <div class="text-center">
+                <p class="fs-3">BMI：<strong>{{ bmi }}</strong></p>
+                <p class="fs-4">判定：<strong>{{judgment}}</strong></p>
+            </div>
+            <a href="/" class="btn btn-primary w-100 mt-3">もう一度計算する</a>
+            <a href="/history" class="btn btn-outline-secondary w-100 mt-2">履歴を見る</a>
+        </div>
+    </div>
 </body>
 </html>

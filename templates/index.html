@@ -2,24 +2,34 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" conetnt="width=device-width, initial-scale=1.0">
     <title>BMI計算アプリ ver2</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    {% if message %}
-        <p style="color: red;">{{ message }}</p>
-    {% endif %}
-    <h1>BMI計算アプリ</h1>
-    <form action="/result" method="post">
-        <p>
-            身長（cm）:
-            <input type="text" name="height" placeholder="例：169">
-        </p>
-        <p>
-            体重（kg）：
-            <input type="text" name="weight" placeholder="例：85">
-        </p>
-        <button type="submit">計算する</button>
-    </form>
-    <a href="/history">過去の記録を見る</a>
+    <div class="container mt-5">
+        <div class="card shadow p-4" style="max-width: 500px; margin: 0 auto;">
+            <h1 class="text-center md-4">BMI計算アプリ</h1>
+            {% if message %}
+                <p style="color: red;">{{ message }}</p>
+            {% endif %}
+
+            <form action="/result" method="post">
+                <div class="mb-3">
+                    <label class="form-label">身長（㎝）</label>
+                    <input type="text" name="height" class="form-control" placeholder="例：169">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">体重（kg）</label>
+                    <input type="text" name="weight" class="form-control" placeholder="例：85">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">計算する</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="/history">過去の記録を見る</a>
+            </div>
+        </div>
+    </div>    
 </body>
 </html>
